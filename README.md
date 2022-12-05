@@ -47,10 +47,11 @@ Develop your next web app with <b>Vite-Ultra </b><sup><em>(speed)</em></sup><br>
 │   ├── api                  # api interface
 │   ├── assets               # static resource
 │   │   └── logo.png
-│   ├── components           # global component
-│   │   └── Navbar.vue       # Navbar component
 │   ├── main.js
-│   ├── router.js            # Vue router
+│   ├── partials           # global component
+│   │   └── Navbar.vue       # Navbar component
+│   |── pages                # all pages
+│   |   └── Index.vue
 │   ├── store                # Pinia store
 │   │   ├── counter.js
 │   │   └── index.js
@@ -61,10 +62,9 @@ Develop your next web app with <b>Vite-Ultra </b><sup><em>(speed)</em></sup><br>
 │   │   └── variables.scss
 │   ├── utils                # global public method
 │   │   └── darkMode.ts
-│   └── views                # all pages
-│       └── Index.vue
+│   └── router.js            # Vue router
 ├── tailwind.config.js       # tailwind configuration
-├── jsconfig.json            # TS compilation configuration
+├── jsconfig.json            # JS compilation configuration
 └── vite.config.js           # Vite configuration
 
 ```
