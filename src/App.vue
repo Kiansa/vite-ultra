@@ -1,31 +1,21 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import i18n from '@/services/i18n'
+const myLocales = ['en', 'de', 'es', 'fi', 'fr', 'it', 'nl', 'sv']
+let lang = localStorage.getItem('locale')
+if (lang != null) {
+  i18n.global.locale.value = lang
+} else if (myLocales.includes(navigator.language.substring(0, 2)) == true) {
+  i18n.global.locale.value = navigator.language.substring(0, 2)
+  localStorage.setItem('locale', navigator.language.substring(0, 2))
+} else {
+  i18n.global.locale.value = 'en'
+  localStorage.setItem('locale', 'en')
+}
+document.querySelector('html').setAttribute('lang', i18n.global.locale.value)
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <main class="grow bg-black text-white h-screen flex flex-col justify-center self-center mx-auto text-center">
+    <router-view />
+  </main>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

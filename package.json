@@ -4,12 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.41"
+    "@heroicons/vue": "^2.0.13",
+    "axios": "^1.2.1",
+    "pinia": "^2.0.27",
+    "pinia-plugin-persistedstate": "^3.0.1",
+    "vue": "^3.2.41",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@intlify/vite-plugin-vue-i18n": "^6.0.3",
