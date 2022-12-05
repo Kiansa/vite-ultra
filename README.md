@@ -9,7 +9,7 @@ Develop your next web app with <b>Vite-Ultra </b><sup><em>(speed)</em></sup><br>
 
 ## Features
 
-- ⚡  [Vue 3](https://github.com/vuejs/vue-next), [Vite 3](https://github.com/vitejs/vite)
+- ⚡ [Vue 3](https://github.com/vuejs/vue-next), [Vite 3](https://github.com/vitejs/vite)
 - 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 - 📥 [Axios](https://axios-http.com/docs/intro)
 - 💡 [Vue Router v4](https://router.vuejs.org/) - The official router for Vue.js
@@ -104,6 +104,7 @@ npm run build
 And you will see the generated file in `dist` that ready to be served.
 
 ##
+
 <p align='center'>
 This README.md file is highly inspired from (https://github.com/kirklin/vite-boot)
 </p>
