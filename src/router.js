@@ -5,8 +5,8 @@ const routerHistory = createWebHistory()
 const router = createRouter({
   history: routerHistory,
   routes: [
-    { path: '/', name: 'Home', component: () => import('@/pages/Index.vue') },
-    { path: '/about', name: 'About', component: () => import('@/pages/About.vue') },
+    { path: '/', name: 'Home', component: () => import('@/pages/Index.vue'), meta: { title: 'Vite Ultra' } },
+    { path: '/about', name: 'About', component: () => import('@/pages/About.vue'), meta: { title: 'About | Vite Ultra' } },
     // more pages ...
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -16,5 +16,10 @@ const router = createRouter({
       return { top: 0 }
     }
   },
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title}`
+  next()
 })
 export default router

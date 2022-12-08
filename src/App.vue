@@ -1,6 +1,6 @@
 <script setup>
 import i18n from '@/services/i18n'
-const myLocales = ['en', 'de', 'es', 'fi', 'fr', 'it', 'nl', 'sv']
+const myLocales = ['en', 'es', 'sv'] //add more locales...
 let lang = localStorage.getItem('locale')
 if (lang != null) {
   i18n.global.locale.value = lang

@@ -18,7 +18,7 @@ defineProps({
     </p>
   </div>
   <div class="leading-0 text-base space-y-1 my-2">
-    <p>Vue I18n configured with auto detection based on browser language</p>
+    <p>Vue I18n {{ $t( 'index.i18n' )}}</p>
     <p>
       Install
       <a class="bg-purple-800 rounded-full px-4" href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>

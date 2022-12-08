@@ -13,13 +13,14 @@ const i18n = createI18n({
     en,
     es,
     sv,
+    // add more locales
   },
 })
 
 // Some extra power for different scenarios
 import { nextTick } from 'vue'
 
-export const SUPPORT_LOCALES = ['en', 'es', 'sv']
+export const SUPPORT_LOCALES = ['en', 'es', 'sv']  // add more locales
 
 export function setupI18n(options = { locale: 'en' }) {
   const i18n = createI18n(options)
