@@ -79,15 +79,17 @@ Develop your next web app with <b>Vite-Ultra </b><sup><em>(speed)</em></sup><br>
 
 ```bash
 npx degit kiansa/vite-ultra my-vite-app-name
+```
+```bash
 cd my-vite-app-name
+```
+```bash
 npm i
 ```
 
 ## Usage
 
 ### Development
-
-Just run and visit http://localhost:8888
 
 ```bash
 npm run dev
