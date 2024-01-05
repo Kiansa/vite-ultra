@@ -1,30 +1,28 @@
 import { createI18n } from 'vue-i18n'
-import en from '@/locales/en'
-import es from '@/locales/es'
-import sv from '@/locales/sv'
-// import more locales...
+import { nextTick } from 'vue'
+import messages from '@intlify/unplugin-vue-i18n/messages'
+export const SUPPORT_LOCALES = ['en', 'es', 'sv']  // add more locales
 
 const i18n = createI18n({
   legacy: false,
   locale: 'en',
   fallbackLocale: 'en',
   globalInjection: true,
-  messages: {
-    en,
-    es,
-    sv,
-    // add more locales
-  },
+  messages,
 })
 
 // Some extra power for different scenarios
-import { nextTick } from 'vue'
 
-export const SUPPORT_LOCALES = ['en', 'es', 'sv']  // add more locales
-
-export function setupI18n(options = { locale: 'en' }) {
+export function setupI18n(options = {
+  legacy: false,
+  locale: 'en',
+  fallbackLocale: 'en',
+  globalInjection: true,
+  messages,
+}) {
   const i18n = createI18n(options)
   setI18nLanguage(i18n, options.locale)
+  // loadLocaleMessages(i18n, options.locale)
   return i18n
 }
 

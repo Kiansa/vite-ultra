@@ -1,22 +1,24 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueI18n from '@intlify/vite-plugin-vue-i18n'
-import { resolve } from 'path'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  mode: 'development',
   plugins: [
     vue(),
-    vueI18n({
-      include: path.resolve(__dirname, '@/locales/**'),
+    VueI18nPlugin({
+      include: [path.resolve(__dirname, './src/locales/**')],
       defaultLocale: 'en',
       fallbackLocale: 'en',
+      // escapeHtml: true,
+      jitCompilation: true,
+      dropMessageCompiler: true,
+      strictMessage: false,
     }),
   ],
   resolve: {
-    alias: { '@': resolve(__dirname, './src') },
+    alias: { '@': path.resolve(__dirname, './src') },
   },
   server: {
     open: true,
@@ -25,5 +27,8 @@ export default defineConfig({
     __VUE_I18N_FULL_INSTALL__: true,
     __VUE_I18N_LEGACY_API__: false,
     __INTLIFY_PROD_DEVTOOLS__: true,
+  },
+  build: {
+    chunkSizeWarningLimit: 3000,
   },
 })
